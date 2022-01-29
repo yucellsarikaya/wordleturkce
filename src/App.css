@@ -8,6 +8,7 @@
     height: 300px;
     position: relative;
     margin: auto;
+    background-color: white;
 }
 .text1{
     display: block;
@@ -54,14 +55,13 @@ p {
     margin-inline-end: 0px;
 }
 .close{
-    margin-left: 140px;
+    margin-left: 130px;
     height: 24px;
     width: 24px;
-    background-color: initial;
-    background-image: none;
-    background-repeat: initial;
-    background-attachment: initial;
-    background-position: initial;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
 }
 .title{
     margin-left: 180px;
@@ -72,10 +72,65 @@ p {
     text-align: center;
     margin-bottom: 12px;
 }
-
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+}
+.helpBtn{
+    margin-right: 170px;
+    height: 24px;
+    width: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+}
+.title1{
+    margin-right: 110px;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.wordlBox{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-color: white;
+    text-transform: uppercase;
+    user-select: none;
+    border : 2px #d3d6da solid; 
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+.boardContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.board{
+    width: 334px;
+    height: 396px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import Modal from 'react-modal/lib/components/Modal';
+import { MainContext, useContext } from "./context"
 
 export default function ModalPopup() {
-    const [modalIsOpen, setIsOpen] = useState(false);
+    const { modalIsOpen, setIsOpen } = useContext(MainContext)
 
     function openModal() {
         setIsOpen(true);
@@ -15,13 +16,9 @@ export default function ModalPopup() {
 
     return (
         <div>
-            <button onClick={openModal}>Open Modal</button>
-
-
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                contentLabel="Example Modal"
                 className="contentModal"
             >
                 <div>
