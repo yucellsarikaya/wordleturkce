@@ -5,7 +5,6 @@ import ModalPopup from './ModalPopup';
 import { MainContext } from './context'
 import GameKeyboard from './GameKeyboard';
 import WorldScreen from './WorldScreen';
-import { keyboard } from '@testing-library/user-event/dist/keyboard';
 
 function App() {
   const [modalIsOpen, setIsOpen] = useState(true);
@@ -15,7 +14,7 @@ function App() {
   const [gameWorld4, setGameWorld4] = useState([])
   const [gameWorld5, setGameWorld5] = useState([])
   const [gameWorld6, setGameWorld6] = useState([])
-  
+ 
   const data = {
     modalIsOpen,
     setIsOpen,
@@ -32,7 +31,6 @@ function App() {
     gameWorld6,
     setGameWorld6
   }
-
 
   return (
     <MainContext.Provider value={data}>
