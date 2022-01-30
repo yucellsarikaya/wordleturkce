@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MainContext, useContext } from "./context"
 
 function GameKeyboard() {
-    let [count, setCount] = useState([1])
+    let [count, setCount] = useState([0])
     let [syc, setSyc] = useState([1])
     const {
         gameWorld1,
@@ -20,23 +20,24 @@ function GameKeyboard() {
     } = useContext(MainContext)
 
     const keyWorldle = (e) => {
-        if (syc == 1 && count[0] < 6 && count[0] >= 0) {
+        if (syc == 1 && count[0] < 5 && count[0] >= 0) {
             setGameWorld1(gameWorld1 => [...gameWorld1, e]);
             count[0] = count[0] + 1
-            console.log(count)
-        } else if (syc == 2 && count[0] < 11 && count[0] >= 5) {
+            console.log(count, gameWorld1)
+        } else if (syc == 2 && count[0] < 10 && count[0] >= 5) {
             setGameWorld2(gameWorld2 => [...gameWorld2, e]);
             count[0] = count[0] + 1
-        } else if (syc == 3 && count[0] < 16 && count[0] >= 10) {
+            console.log(count)
+        } else if (syc == 3 && count[0] < 15 && count[0] >= 10) {
             setGameWorld3(gameWorld3 => [...gameWorld3, e]);
             count[0] = count[0] + 1
-        } else if (syc == 4 && count[0] < 21 && count[0] >= 15) {
+        } else if (syc == 4 && count[0] < 20 && count[0] >= 15) {
             setGameWorld4(gameWorld4 => [...gameWorld4, e]);
             count[0] = count[0] + 1
-        } else if (syc == 5 && count[0] < 26 && count[0] >= 20) {
+        } else if (syc == 5 && count[0] < 25 && count[0] >= 20) {
             setGameWorld5(gameWorld5 => [...gameWorld5, e]);
             count[0] = count[0] + 1
-        } else if (syc == 6 && count[0] < 31 && count[0] >= 25) {
+        } else if (syc == 6 && count[0] < 30 && count[0] >= 25) {
             setGameWorld6(gameWorld6 => [...gameWorld6, e]);
             count[0] = count[0] + 1
         }
@@ -44,7 +45,7 @@ function GameKeyboard() {
     }
 
     const enter = () => {
-        if (count[0] % 6 == 0) {
+        if (count[0] % 5 == 0) {
             syc[0] = syc[0] + 1
         } else {
             console.log("yetersiz harf")
@@ -52,37 +53,42 @@ function GameKeyboard() {
     }
 
     const del = () => {
-        if (syc == 1 && count[0] <= 6 && count[0] >= 0) {
+        if (syc == 1 && count[0] < 6 && count[0] >= 0) {
             var lenght = gameWorld1.length
-            lenght = gameWorld1[lenght - 1]
-            // gameWorld1.splice(lenght, 1)
-            setGameWorld1(gameWorld1.filter(item => item !== lenght));
+            var array = gameWorld1
+            array.splice(lenght - 1, 1)
+            setGameWorld1(gameWorld1 => [...array]);
             count[0] = count[0] - 1
-        }else if(syc == 2 && count[0] < 11 && count[0] >= 5){
+        } else if (syc == 2 && count[0] < 11 && count[0] >= 5) {
             var lenght = gameWorld2.length
-            lenght = gameWorld2[lenght - 1]
-            setGameWorld2(gameWorld2.filter(item => item !== lenght));
+            var array = gameWorld2
+            array.splice(lenght - 1, 1)
+            setGameWorld2(gameWorld2 => [...array]);
             count[0] = count[0] - 1
-        }else if(syc == 3 && count[0] < 16 && count[0] >= 10){
+        } else if (syc == 3 && count[0] < 16 && count[0] >= 10) {
             var lenght = gameWorld3.length
-            lenght = gameWorld3[lenght - 1]
-            setGameWorld3(gameWorld3.filter(item => item !== lenght));
-            count[0] = count[0] - 1
-        }else if(syc == 4 && count[0] < 21 && count[0] >= 15){
+             var array = gameWorld3
+             array.splice(lenght-1,1)
+             setGameWorld3(gameWorld3 => [...array]);
+             count[0] = count[0] - 1
+        } else if (syc == 4 && count[0] < 21 && count[0] >= 15) {
             var lenght = gameWorld4.length
-            lenght = gameWorld4[lenght - 1]
-            setGameWorld4(gameWorld4.filter(item => item !== lenght));
-            count[0] = count[0] - 1
-        }else if(syc == 5 && count[0] < 26 && count[0] >= 20){
+             var array = gameWorld4
+             array.splice(lenght-1,1)
+             setGameWorld4(gameWorld4 => [...array]);
+             count[0] = count[0] - 1
+        } else if (syc == 5 && count[0] < 26 && count[0] >= 20) {
             var lenght = gameWorld5.length
-            lenght = gameWorld5[lenght - 1]
-            setGameWorld5(gameWorld5.filter(item => item !== lenght));
-            count[0] = count[0] - 1
-        }else if(syc == 6 && count[0] < 31 && count[0] >= 25){
+             var array = gameWorld5
+             array.splice(lenght-1,1)
+             setGameWorld5(gameWorld5 => [...array]);
+             count[0] = count[0] - 1
+        } else if (syc == 6 && count[0] < 31 && count[0] >= 25) {
             var lenght = gameWorld6.length
-            lenght = gameWorld6[lenght - 1]
-            setGameWorld6(gameWorld6.filter(item => item !== lenght));
-            count[0] = count[0] - 1
+             var array = gameWorld6
+             array.splice(lenght-1,1)
+             setGameWorld6(gameWorld6 => [...array]);
+             count[0] = count[0] - 1
         }
 
     }
