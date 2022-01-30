@@ -20,6 +20,7 @@ export default function ModalPopup() {
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 className="contentModal"
+                ariaHideApp={false}
             >
                 <div>
                     <div className='header'>

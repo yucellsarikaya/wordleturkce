@@ -1,6 +1,5 @@
 import React from 'react';
 import { MainContext, useContext } from "./context"
-import WorldScreen from './WorldScreen';
 
 function GameScreen() {
     const { modalIsOpen, setIsOpen } = useContext(MainContext)
@@ -21,7 +20,6 @@ function GameScreen() {
                 <div className='title1'><p>WORDLE TÜRKÇE</p></div>
             </div>
             <hr/>
-            <WorldScreen/>
         </div>
     );
 }
