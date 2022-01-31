@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wordleturkce/static/css/main.b5b2ca3a.css",
+    "main.js": "/wordleturkce/static/js/main.fc15bab4.js",
+    "index.html": "/wordleturkce/index.html",
+    "main.b5b2ca3a.css.map": "/wordleturkce/static/css/main.b5b2ca3a.css.map",
+    "main.fc15bab4.js.map": "/wordleturkce/static/js/main.fc15bab4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5b2ca3a.css",
+    "static/js/main.fc15bab4.js"
+  ]
+}
