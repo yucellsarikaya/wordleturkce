@@ -3,8 +3,8 @@ import { MainContext, useContext } from "./context"
 
 function GameScreen() {
     const { modalIsOpen, setIsOpen } = useContext(MainContext)
-    
-    const openPopup =() => {
+
+    const openPopup = () => {
         setIsOpen(!modalIsOpen);
     }
     return (
@@ -17,9 +17,23 @@ function GameScreen() {
                         </svg>
                     </button>
                 </div>
-                <div className='title1'><p>WORDLE TÜRKÇE</p></div>
+                
             </div>
-            <hr/>
+            <div className="titleHeader">
+                    <div className='boxTiltle green'>W</div>
+                    <div className='boxTiltle green'>O</div>
+                    <div className='boxTiltle green'>R</div>
+                    <div className='boxTiltle green'>D</div>
+                    <div className='boxTiltle green'>L</div>
+                    <div className='boxTiltle green'>E</div>
+                    <div className='boxTiltle yellow'>T</div>
+                    <div className='boxTiltle yellow'>Ü</div>
+                    <div className='boxTiltle yellow'>R</div>
+                    <div className='boxTiltle yellow'>K</div>
+                    <div className='boxTiltle yellow'>Ç</div>
+                    <div className='boxTiltle yellow'>E</div>
+                </div>
+            <hr />
         </div>
     );
 }

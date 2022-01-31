@@ -51,7 +51,7 @@ function GameKeyboard() {
     }
 
     const enter = () => {
-        if (count[0] % 5 == 0) {
+        if (count[0] % 5 == 0 && count[0] > 0) {
             if (syc == 1) {
                 for (var i = 0; i < gameWorld1.length; i++) {
                     tahmin += gameWorld1[i]

@@ -55,7 +55,7 @@ export default function ModalPopup() {
                     <div className='box gray'>Z</div>
                     <div><p><strong>Z</strong>  harfi kelimede yok. </p></div>
                     <hr />
-                    <div><strong>Her gün yeni bir WORDLE gelir!</strong></div>
+                    <div><strong>Sınırsız WORDLE oyna (:</strong></div>
                 </div>
 
             </Modal>

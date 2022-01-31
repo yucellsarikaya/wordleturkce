@@ -7,7 +7,7 @@ import GameKeyboard from './GameKeyboard';
 import WorldScreen from './WorldScreen';
 
 function App() {
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [gameWorld1, setGameWorld1] = useState([])
   const [gameWorld2, setGameWorld2] = useState([])
   const [gameWorld3, setGameWorld3] = useState([])
