@@ -274,7 +274,8 @@ function GameKeyboard() {
                         <button onClick={() => keyWorldle("r")} className='worldleBtn'>R</button>
                         <button onClick={() => keyWorldle("t")} className='worldleBtn'>T</button>
                         <button onClick={() => keyWorldle("y")} className='worldleBtn'>Y</button>
-                        <button onClick={() => keyWorldle("u")} className='worldleBtn'>U</button>
+                        <button onClick={() => keyWorldle("u")} className='worldleBtn'>U</button> 
+                        
                         <button onClick={() => keyWorldle("ı")} className='worldleBtn'>I</button>
                         <button onClick={() => keyWorldle("o")} className='worldleBtn'>O</button>
                         <button onClick={() => keyWorldle("p")} className='worldleBtn'>P</button>
