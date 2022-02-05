@@ -92,16 +92,22 @@ function GameKeyboard() {
                     tahmin += gameWorld6[i]
                 }
             }
-            wordSearch(tahmin)
-            tahmin = ""
+            var durum = words.find(key => key === tahmin.toLocaleLowerCase())
+            if (durum) {
+                wordSearch(tahmin)
+                tahmin = ""
+            } else {
+                alertify.error("Anlamlı kelime giriniz", 1.5)
+            }
+
         } else {
             alertify.error("Yetersiz harf", 1.5)
         }
     }
 
     const wordSearch = (kelime) => {
-        var durum = words.find(key => key === kelime.toLocaleLowerCase())
-        if (durum) {
+
+        if (kelime) {
             if (kelime.toLowerCase() === world[0]) {
                 alertify.success("Kelimeyi buldunuz, tebrikler", 1.5)
                 if (syc[0] == 1) {
@@ -161,7 +167,6 @@ function GameKeyboard() {
                             }
                         }
                     }
-                    alertify.error("Anlamlı kelime giriniz", 1.5)
                 } else if (syc[0] == 2) {
                     alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
                     setGameWorldColor2([])
@@ -275,8 +280,6 @@ function GameKeyboard() {
                 }
             }
             syc[0] = syc[0] + 1
-        } else {
-            alertify.error("Anlamlı kelime giriniz", 1.5)
         }
     }
 
