@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wordleturkce/static/css/main.b5b2ca3a.css",
-    "main.js": "/wordleturkce/static/js/main.bb8b34bc.js",
+    "main.css": "/wordleturkce/static/css/main.80e807c4.css",
+    "main.js": "/wordleturkce/static/js/main.f309dbbd.js",
     "index.html": "/wordleturkce/index.html",
-    "main.b5b2ca3a.css.map": "/wordleturkce/static/css/main.b5b2ca3a.css.map",
-    "main.bb8b34bc.js.map": "/wordleturkce/static/js/main.bb8b34bc.js.map"
+    "main.80e807c4.css.map": "/wordleturkce/static/css/main.80e807c4.css.map",
+    "main.f309dbbd.js.map": "/wordleturkce/static/js/main.f309dbbd.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5b2ca3a.css",
-    "static/js/main.bb8b34bc.js"
+    "static/css/main.80e807c4.css",
+    "static/js/main.f309dbbd.js"
   ]
 }
