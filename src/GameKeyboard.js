@@ -81,53 +81,181 @@ function GameKeyboard() {
 
             wordSearch(tahmin)
             tahmin = ""
-            syc[0] = syc[0] + 1
         } else {
             console.log("yetersiz harf")
         }
     }
 
     const wordSearch = (kelime) => {
+        var durum = words.find(key => key === kelime.toLocaleLowerCase())
         console.log(world)
-        if (kelime.toLowerCase() === world[0]) {
-            console.log("var")
+        if (true) {
+            if (kelime.toLowerCase() === world[0]) {
+                console.log("kelime aynı")
+            }
+            else {
+                if (syc[0] == 1) {
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld1[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld1[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }else if(syc[0] == 2){
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld2[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld2[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }else if(syc[0] == 3){
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld2[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld2[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }else if(syc[0] == 4){
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld4[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld4[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }else if(syc[0] == 5){
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld5[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld5[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }else if(syc[0] == 6){
+                    for (var i = 0; i < 5; i++) {
+                        var harf = world[0].slice(i, i + 1)
+                        if (gameWorld6[i].toLowerCase() == harf) {
+                            console.log("harf aynı yerde")
+                        } else {
+                            var not = 0;
+                            for (var j = 0; j < 5; j++) {
+                                var harf = world[0].slice(j, j + 1)
+                                if (gameWorld6[i].toLowerCase() == harf) {
+                                    console.log("harf var ama farklı yerde")
+                                    break;
+                                }
+                                not++;
+                            }
+                            if (not == 5) {
+                                console.log("harf yok")
+                            }
+                        }
+                    }
+                }
+            }
+            syc[0] = syc[0] + 1
         } else {
-            console.log("yok")
+            console.log("anlamlı kelime giriniz")
         }
+
+
     }
 
     const del = () => {
-        if (syc == 1 && count[0] < 6 && count[0] >= 0) {
+        if (syc == 1 && count[0] < 6 && count[0] > 0) {
             var lenght = gameWorld1.length
             var array = gameWorld1
             array.splice(lenght - 1, 1)
             setGameWorld1(gameWorld1 => [...array]);
             count[0] = count[0] - 1
-        } else if (syc == 2 && count[0] < 11 && count[0] >= 5) {
+        } else if (syc == 2 && count[0] < 11 && count[0] > 5) {
             var lenght = gameWorld2.length
             var array = gameWorld2
             array.splice(lenght - 1, 1)
             setGameWorld2(gameWorld2 => [...array]);
             count[0] = count[0] - 1
-        } else if (syc == 3 && count[0] < 16 && count[0] >= 10) {
+        } else if (syc == 3 && count[0] < 16 && count[0] > 10) {
             var lenght = gameWorld3.length
             var array = gameWorld3
             array.splice(lenght - 1, 1)
             setGameWorld3(gameWorld3 => [...array]);
             count[0] = count[0] - 1
-        } else if (syc == 4 && count[0] < 21 && count[0] >= 15) {
+        } else if (syc == 4 && count[0] < 21 && count[0] > 15) {
             var lenght = gameWorld4.length
             var array = gameWorld4
             array.splice(lenght - 1, 1)
             setGameWorld4(gameWorld4 => [...array]);
             count[0] = count[0] - 1
-        } else if (syc == 5 && count[0] < 26 && count[0] >= 20) {
+        } else if (syc == 5 && count[0] < 26 && count[0] > 20) {
             var lenght = gameWorld5.length
             var array = gameWorld5
             array.splice(lenght - 1, 1)
             setGameWorld5(gameWorld5 => [...array]);
             count[0] = count[0] - 1
-        } else if (syc == 6 && count[0] < 31 && count[0] >= 25) {
+        } else if (syc == 6 && count[0] < 31 && count[0] > 25) {
             var lenght = gameWorld6.length
             var array = gameWorld6
             array.splice(lenght - 1, 1)
@@ -142,42 +270,42 @@ function GameKeyboard() {
             <div>
                 <div className='keyboard'>
                     <div className='rowKeyboard'>
-                        <button onClick={() => keyWorldle("E")} className='worldleBtn'>E</button>
-                        <button onClick={() => keyWorldle("R")} className='worldleBtn'>R</button>
-                        <button onClick={() => keyWorldle("T")} className='worldleBtn'>T</button>
-                        <button onClick={() => keyWorldle("Y")} className='worldleBtn'>Y</button>
-                        <button onClick={() => keyWorldle("U")} className='worldleBtn'>U</button>
-                        <button onClick={() => keyWorldle("I")} className='worldleBtn'>I</button>
-                        <button onClick={() => keyWorldle("O")} className='worldleBtn'>O</button>
-                        <button onClick={() => keyWorldle("P")} className='worldleBtn'>P</button>
-                        <button onClick={() => keyWorldle("Ğ")} className='worldleBtn'>Ğ</button>
-                        <button onClick={() => keyWorldle("Ü")} className='worldleBtn'>Ü</button>
+                        <button onClick={() => keyWorldle("e")} className='worldleBtn'>E</button>
+                        <button onClick={() => keyWorldle("r")} className='worldleBtn'>R</button>
+                        <button onClick={() => keyWorldle("t")} className='worldleBtn'>T</button>
+                        <button onClick={() => keyWorldle("y")} className='worldleBtn'>Y</button>
+                        <button onClick={() => keyWorldle("u")} className='worldleBtn'>U</button>
+                        <button onClick={() => keyWorldle("ı")} className='worldleBtn'>I</button>
+                        <button onClick={() => keyWorldle("o")} className='worldleBtn'>O</button>
+                        <button onClick={() => keyWorldle("p")} className='worldleBtn'>P</button>
+                        <button onClick={() => keyWorldle("ğ")} className='worldleBtn'>Ğ</button>
+                        <button onClick={() => keyWorldle("ü")} className='worldleBtn'>Ü</button>
                     </div>
                     <div className='rowKeyboard'>
                         <div className='spacer half'></div>
-                        <button onClick={() => keyWorldle("A")} className='worldleBtn'>A</button>
-                        <button onClick={() => keyWorldle("S")} className='worldleBtn'>S</button>
-                        <button onClick={() => keyWorldle("D")} className='worldleBtn'>D</button>
-                        <button onClick={() => keyWorldle("F")} className='worldleBtn'>F</button>
-                        <button onClick={() => keyWorldle("G")} className='worldleBtn'>G</button>
-                        <button onClick={() => keyWorldle("H")} className='worldleBtn'>H</button>
-                        <button onClick={() => keyWorldle("J")} className='worldleBtn'>J</button>
-                        <button onClick={() => keyWorldle("K")} className='worldleBtn'>K</button>
-                        <button onClick={() => keyWorldle("L")} className='worldleBtn'>L</button>
-                        <button onClick={() => keyWorldle("Ş")} className='worldleBtn'>Ş</button>
+                        <button onClick={() => keyWorldle("a")} className='worldleBtn'>A</button>
+                        <button onClick={() => keyWorldle("s")} className='worldleBtn'>S</button>
+                        <button onClick={() => keyWorldle("d")} className='worldleBtn'>D</button>
+                        <button onClick={() => keyWorldle("f")} className='worldleBtn'>F</button>
+                        <button onClick={() => keyWorldle("g")} className='worldleBtn'>G</button>
+                        <button onClick={() => keyWorldle("h")} className='worldleBtn'>H</button>
+                        <button onClick={() => keyWorldle("j")} className='worldleBtn'>J</button>
+                        <button onClick={() => keyWorldle("k")} className='worldleBtn'>K</button>
+                        <button onClick={() => keyWorldle("l")} className='worldleBtn'>L</button>
+                        <button onClick={() => keyWorldle("ş")} className='worldleBtn'>Ş</button>
                         <button onClick={() => keyWorldle("İ")} className='worldleBtn'>İ</button>
                         <div className='spacer half'></div>
                     </div>
                     <div className='rowKeyboard'>
                         <button onClick={() => enter()} className="one-and-a-half">Enter</button>
-                        <button onClick={() => keyWorldle("Z")} className='worldleBtn'>Z</button>
-                        <button onClick={() => keyWorldle("C")} className='worldleBtn'>C</button>
-                        <button onClick={() => keyWorldle("V")} className='worldleBtn'>V</button>
-                        <button onClick={() => keyWorldle("B")} className='worldleBtn'>B</button>
-                        <button onClick={() => keyWorldle("N")} className='worldleBtn'>N</button>
-                        <button onClick={() => keyWorldle("M")} className='worldleBtn'>M</button>
-                        <button onClick={() => keyWorldle("Ö")} className='worldleBtn'>Ö</button>
-                        <button onClick={() => keyWorldle("Ç")} className='worldleBtn'>Ç</button>
+                        <button onClick={() => keyWorldle("z")} className='worldleBtn'>Z</button>
+                        <button onClick={() => keyWorldle("c")} className='worldleBtn'>C</button>
+                        <button onClick={() => keyWorldle("v")} className='worldleBtn'>V</button>
+                        <button onClick={() => keyWorldle("b")} className='worldleBtn'>B</button>
+                        <button onClick={() => keyWorldle("n")} className='worldleBtn'>N</button>
+                        <button onClick={() => keyWorldle("m")} className='worldleBtn'>M</button>
+                        <button onClick={() => keyWorldle("ö")} className='worldleBtn'>Ö</button>
+                        <button onClick={() => keyWorldle("ç")} className='worldleBtn'>Ç</button>
                         <button onClick={() => del()} className="one-and-a-half">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                                 <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
@@ -191,3 +319,15 @@ function GameKeyboard() {
 }
 
 export default GameKeyboard;
+
+
+// else {
+//     for (var j = 0; j < 5; j++) {
+//         var harf1 = world[0].slice(j, j + 1)
+//         if (gameWorld1[i].toLowerCase() == harf1) {
+//             console.log("harf var  ama farklı yerde")
+//             break;
+//         }
+//         console.log("harf yok")
+//     }
+// }
