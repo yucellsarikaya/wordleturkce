@@ -14,7 +14,14 @@ function App() {
   const [gameWorld4, setGameWorld4] = useState([])
   const [gameWorld5, setGameWorld5] = useState([])
   const [gameWorld6, setGameWorld6] = useState([])
- 
+
+  const [gameWorldColor1, setGameWorldColor1] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+  const [gameWorldColor2, setGameWorldColor2] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+  const [gameWorldColor3, setGameWorldColor3] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+  const [gameWorldColor4, setGameWorldColor4] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+  const [gameWorldColor5, setGameWorldColor5] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+  const [gameWorldColor6, setGameWorldColor6] = useState([{none : false}, {none : false}, {none : false}, {none : false}, {none : false}])
+
   const data = {
     modalIsOpen,
     setIsOpen,
@@ -29,7 +36,20 @@ function App() {
     gameWorld5,
     setGameWorld5,
     gameWorld6,
-    setGameWorld6
+    setGameWorld6,
+
+    gameWorldColor1,
+    setGameWorldColor1,
+    gameWorldColor2,
+    setGameWorldColor2,
+    gameWorldColor3,
+    setGameWorldColor3,
+    gameWorldColor4,
+    setGameWorldColor4,
+    gameWorldColor5,
+    setGameWorldColor5,
+    gameWorldColor6,
+    setGameWorldColor6,
   }
 
   return (

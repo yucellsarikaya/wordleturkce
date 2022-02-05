@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { MainContext, useContext } from "./context"
 import words from "./words.json"
+import alertify from "alertifyjs"
+
 function GameKeyboard() {
     let [count, setCount] = useState([0])
     let [syc, setSyc] = useState([1])
@@ -18,7 +20,20 @@ function GameKeyboard() {
         gameWorld5,
         setGameWorld5,
         gameWorld6,
-        setGameWorld6
+        setGameWorld6,
+
+        gameWorldColor1,
+        setGameWorldColor1,
+        gameWorldColor2,
+        setGameWorldColor2,
+        gameWorldColor3,
+        setGameWorldColor3,
+        gameWorldColor4,
+        setGameWorldColor4,
+        gameWorldColor5,
+        setGameWorldColor5,
+        gameWorldColor6,
+        setGameWorldColor6,
     } = useContext(MainContext)
 
     useEffect(() => {
@@ -77,140 +92,183 @@ function GameKeyboard() {
                     tahmin += gameWorld6[i]
                 }
             }
-
-
             wordSearch(tahmin)
             tahmin = ""
         } else {
-            console.log("yetersiz harf")
+            alertify.error("Yetersiz harf", 1.5)
         }
     }
 
     const wordSearch = (kelime) => {
         var durum = words.find(key => key === kelime.toLocaleLowerCase())
-        console.log(world)
-        if (true) {
+        if (durum) {
             if (kelime.toLowerCase() === world[0]) {
-                console.log("kelime aynı")
+                alertify.success("Kelimeyi buldunuz, tebrikler", 1.5)
+                if (syc[0] == 1) {
+                    setGameWorldColor1([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor1(gameWorldColor1 => [...gameWorldColor1, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                    syc[0] = syc[0] + 1
+                } else if (syc[0] == 2) {
+                    setGameWorldColor2([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor2(gameWorldColor2 => [...gameWorldColor2, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                } else if (syc[0] == 3) {
+                    setGameWorldColor3([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor3(gameWorldColor3 => [...gameWorldColor3, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                } else if (syc[0] == 4) {
+                    setGameWorldColor4([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor4(gameWorldColor4 => [...gameWorldColor4, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                } else if (syc[0] == 5) {
+                    setGameWorldColor5([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor5(gameWorldColor5 => [...gameWorldColor5, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                } else if (syc[0] == 6) {
+                    setGameWorldColor6([])
+                    for (var i = 0; i < 5; i++) {
+                        setGameWorldColor6(gameWorldColor6 => [...gameWorldColor6, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
+                    }
+                }
+                syc[0] = syc[0] + 100
             }
             else {
                 if (syc[0] == 1) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
+                    setGameWorldColor1([])
                     for (var i = 0; i < 5; i++) {
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld1[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor1(gameWorldColor1 => [...gameWorldColor1, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
                                 if (gameWorld1[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                    setGameWorldColor1(gameWorldColor1 => [...gameWorldColor1, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor1(gameWorldColor1 => [...gameWorldColor1, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
-                }else if(syc[0] == 2){
+                    alertify.error("Anlamlı kelime giriniz", 1.5)
+                } else if (syc[0] == 2) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
+                    setGameWorldColor2([])
                     for (var i = 0; i < 5; i++) {
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld2[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor2(gameWorldColor2 => [...gameWorldColor2, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
                                 if (gameWorld2[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                    setGameWorldColor2(gameWorldColor2 => [...gameWorldColor2, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor2(gameWorldColor2 => [...gameWorldColor2, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
-                }else if(syc[0] == 3){
+                } else if (syc[0] == 3) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
+                    setGameWorldColor3([])
                     for (var i = 0; i < 5; i++) {
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld2[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor3(gameWorldColor3 => [...gameWorldColor3, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
-                                if (gameWorld2[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                if (gameWorld3[i].toLowerCase() == harf) {
+                                    setGameWorldColor3(gameWorldColor3 => [...gameWorldColor3, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor3(gameWorldColor3 => [...gameWorldColor3, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
-                }else if(syc[0] == 4){
+                } else if (syc[0] == 4) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
+                    setGameWorldColor4([])
                     for (var i = 0; i < 5; i++) {
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld4[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor4(gameWorldColor4 => [...gameWorldColor4, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
                                 if (gameWorld4[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                    setGameWorldColor4(gameWorldColor4 => [...gameWorldColor4, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor4(gameWorldColor4 => [...gameWorldColor4, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
-                }else if(syc[0] == 5){
+                } else if (syc[0] == 5) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
+                    setGameWorldColor5([])
                     for (var i = 0; i < 5; i++) {
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld5[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor5(gameWorldColor5 => [...gameWorldColor5, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
                                 if (gameWorld5[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                    setGameWorldColor5(gameWorldColor5 => [...gameWorldColor5, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor5(gameWorldColor5 => [...gameWorldColor5, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
-                }else if(syc[0] == 6){
+                } else if (syc[0] == 6) {
+                    alertify.error("Bilemediniz, yeni kelime giriniz", 1.5)
                     for (var i = 0; i < 5; i++) {
+                        setGameWorldColor6([])
                         var harf = world[0].slice(i, i + 1)
                         if (gameWorld6[i].toLowerCase() == harf) {
-                            console.log("harf aynı yerde")
+                            setGameWorldColor6(gameWorldColor6 => [...gameWorldColor6, { none: true, backgroundColor: '#6aaa64', color: 'white' }]);
                         } else {
                             var not = 0;
                             for (var j = 0; j < 5; j++) {
                                 var harf = world[0].slice(j, j + 1)
                                 if (gameWorld6[i].toLowerCase() == harf) {
-                                    console.log("harf var ama farklı yerde")
+                                    setGameWorldColor6(gameWorldColor6 => [...gameWorldColor6, { none: true, backgroundColor: '#c9b458', color: 'white' }]);
                                     break;
                                 }
                                 not++;
                             }
                             if (not == 5) {
-                                console.log("harf yok")
+                                setGameWorldColor6(gameWorldColor6 => [...gameWorldColor6, { none: true, backgroundColor: '#787c7e', color: 'white' }]);
                             }
                         }
                     }
@@ -218,10 +276,8 @@ function GameKeyboard() {
             }
             syc[0] = syc[0] + 1
         } else {
-            console.log("anlamlı kelime giriniz")
+            alertify.error("Anlamlı kelime giriniz", 1.5)
         }
-
-
     }
 
     const del = () => {
@@ -274,8 +330,7 @@ function GameKeyboard() {
                         <button onClick={() => keyWorldle("r")} className='worldleBtn'>R</button>
                         <button onClick={() => keyWorldle("t")} className='worldleBtn'>T</button>
                         <button onClick={() => keyWorldle("y")} className='worldleBtn'>Y</button>
-                        <button onClick={() => keyWorldle("u")} className='worldleBtn'>U</button> 
-                        
+                        <button onClick={() => keyWorldle("u")} className='worldleBtn'>U</button>
                         <button onClick={() => keyWorldle("ı")} className='worldleBtn'>I</button>
                         <button onClick={() => keyWorldle("o")} className='worldleBtn'>O</button>
                         <button onClick={() => keyWorldle("p")} className='worldleBtn'>P</button>
@@ -320,15 +375,3 @@ function GameKeyboard() {
 }
 
 export default GameKeyboard;
-
-
-// else {
-//     for (var j = 0; j < 5; j++) {
-//         var harf1 = world[0].slice(j, j + 1)
-//         if (gameWorld1[i].toLowerCase() == harf1) {
-//             console.log("harf var  ama farklı yerde")
-//             break;
-//         }
-//         console.log("harf yok")
-//     }
-// }
